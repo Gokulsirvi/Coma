@@ -1,0 +1,15 @@
+;division of A with B
+MVI C,00H
+  LXI H,4150H
+  MOV A,M
+  INX H
+  MOV B,M
+  LOOP: CMP B
+    JC NEXT
+    SUB B
+    INR C
+    JMP LOOP
+NEXT: STA 4152H
+   MOV A,C
+   STA 4153H
+HLT
