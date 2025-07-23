@@ -1,0 +1,15 @@
+;addition of array element
+MVI C,00H
+  MVI D,05H
+  MVI A,00H
+  LXI H,4150H
+ LOOP: ADD M
+  JNC NEXT
+  INR C
+NEXT: INX H
+      DCR D
+      JNZ LOOP
+      STA 4155H
+      MOV A,C
+      STA 4156H
+HLT
